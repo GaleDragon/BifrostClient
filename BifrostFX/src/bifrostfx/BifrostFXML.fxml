@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="185.0" prefWidth="600.0" style="-fx-background-color: gainsboro;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml" fx:controller="bifrostfx.BifrostFXMLController">
+  <children>
+    <Button fx:id="bttn" layoutX="14.0" layoutY="150.0" mnemonicParsing="false" onAction="#submit" text="Execute" />
+    <Group id="Group" layoutX="14.0" layoutY="116.0" />
+    <TextField fx:id="key" layoutX="78.0" layoutY="14.0" prefWidth="508.0" />
+    <Label layoutX="14.0" layoutY="17.0" text="Key:" />
+    <TextField fx:id="file" layoutX="78.0" layoutY="92.0" onMouseClicked="#browse" prefWidth="508.0">
+      <tooltip>
+        <Tooltip text="Place the URL here." />
+      </tooltip>
+    </TextField>
+    <Label layoutX="14.0" layoutY="95.0" text="File:" />
+    <ProgressBar fx:id="progress" layoutX="92.0" layoutY="155.0" prefWidth="208.0" progress="0.0" />
+    <ChoiceBox fx:id="service" layoutX="78.0" layoutY="53.0" prefWidth="208.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Google Drive" />
+          <String fx:value="Dropbox" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label layoutX="15.0" layoutY="56.0" text="Service:" />
+    <ChoiceBox fx:id="destination" layoutX="386.0" layoutY="54.0" prefWidth="200.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Upload" />
+          <String fx:value="Download" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label layoutX="300.0" layoutY="56.0" prefWidth="87.0" text="Destination:" />
+    <Label fx:id="message" alignment="CENTER" layoutX="300.0" layoutY="153.0" prefWidth="286.0" />
+    <CheckBox fx:id="chunked" layoutX="15.0" layoutY="124.0" mnemonicParsing="false" text="Chunked" />
+    <CheckBox fx:id="force" layoutX="259.0" layoutY="124.0" mnemonicParsing="false" text="Forced" />
+    <CheckBox fx:id="compress" layoutX="486.0" layoutY="124.0" mnemonicParsing="false" text="Compressed" />
+  </children>
+  <stylesheets>
+    <URL value="@bifrostfxml.css" />
+  </stylesheets>
+</AnchorPane>
